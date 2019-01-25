@@ -32,6 +32,13 @@ function init() {
 function render() {
     guessEl.textContent = guess;
     hangmanImg.style.backgroundPosition = `${-75 * wrongGuesses.length}px 0`;
+    ig (guess === secret) {
+        msgEl.textContent = "Congrats you guessed the word!";
+    } else if (wrongGuesses.length === MAX_WRONG_GUESSES) {
+        msgEl.textContent = "Sorry, you've been hanged!";
+    } else {
+        msgEl.textContent = "Good luck!";
+    }
 }
 
 function handleLetterClick(evt) {
